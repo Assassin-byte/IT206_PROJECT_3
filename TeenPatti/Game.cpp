@@ -46,5 +46,17 @@ void Game::startGame(int rounds) {
     for (int i = 1; i <= rounds; i++) {
         std::cout << "\n--- Round " << i << " ---\n";
         playRound();
+
+        // Ask the user if they want to continue to the next round
+        if (i < rounds) { // Only ask if it's not the last round
+            char choice;
+            std::cout << "\nDo you want to proceed to the next round? (y/n): ";
+            std::cin >> choice;
+
+            if (choice == 'n' || choice == 'N') {
+                std::cout << "\nGame ended early by the players.\n";
+                break;
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 #include "Player.h"
 #include <iostream>
+#include <iomanip>
 
 Player::Player(const std::string& playerName) : name(playerName) {}
 
@@ -9,9 +10,43 @@ void Player::addCard(const Card& card) {
 
 void Player::showHand() const {
     std::cout << "\nCards of " << name << " are:\n";
+
+    // Print the top border of the cards
     for (const Card& card : hand) {
-        std::cout << card.rank << " of " << card.suit << std::endl;
+        std::cout << ".------. ";
     }
+    std::cout << "\n";
+
+    // Print the rank on the top of the cards
+    for (const Card& card : hand) {
+        std::cout << "| " << std::setw(2) << card.rank << "   | ";
+    }
+    std::cout << "\n";
+
+    // Print the suit in the middle of the cards
+    for (const Card& card : hand) {
+        std::string suitSymbol;
+        if (card.suit == "Hearts") suitSymbol = "<3";
+        else if (card.suit == "Diamonds") suitSymbol = "<>";
+        else if (card.suit == "Clubs") suitSymbol = "*";
+        else if (card.suit == "Spades") suitSymbol = "^";
+        else suitSymbol = " ";
+
+        std::cout << "|  " << suitSymbol << "   | ";
+    }
+    std::cout << "\n";
+
+    // Print the rank on the bottom of the cards
+    for (const Card& card : hand) {
+        std::cout << "|   " << std::setw(2) << card.rank << " | ";
+    }
+    std::cout << "\n";
+
+    // Print the bottom border of the cards
+    for (const Card& card : hand) {
+        std::cout << "`------' ";
+    }
+    std::cout << "\n";
 }
 
 std::string Player::getName() const {
