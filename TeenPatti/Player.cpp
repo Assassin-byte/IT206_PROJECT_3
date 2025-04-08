@@ -26,13 +26,15 @@ void Player::showHand() const {
     // Print the suit in the middle of the cards
     for (const Card& card : hand) {
         std::string suitSymbol;
-        if (card.suit == "Hearts") suitSymbol = "<3";
-        else if (card.suit == "Diamonds") suitSymbol = "<>";
-        else if (card.suit == "Clubs") suitSymbol = "*";
-        else if (card.suit == "Spades") suitSymbol = "^";
+        if (card.suit == "Hearts")
+        std::cout << "|  " << u8"♥" << "   | ";
+        else if (card.suit == "Diamonds") 
+        std::cout << "|  " << u8"♦" << "   | ";
+        else if (card.suit == "Clubs") 
+        std::cout << "|  " << u8"♣" << "   | ";        
+        else if (card.suit == "Spades") 
+        std::cout << "|  " << u8"♠" << "   | ";        
         else suitSymbol = " ";
-
-        std::cout << "|  " << suitSymbol << "   | ";
     }
     std::cout << "\n";
 
