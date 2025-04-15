@@ -5,7 +5,7 @@
 
 Deck::Deck() {
     std::string suits[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
-    std::string ranks[] = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
+    std::string ranks[] = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
     int values[] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
 
     for (const std::string& suit : suits) {
