@@ -4,51 +4,47 @@
 
 ## **Welcome!**
 
-Hello everyone, and thank you for joining me today! I’m thrilled to present our open-source project: **Blackjack and Teen Patti Game**. This project is a **C++ implementation** of two popular card games, showcasing the power of **object-oriented programming (OOP)** principles to create an engaging, interactive, and feature-rich gaming experience.
+Hello everyone, and thank you for joining me today! I’m excited to present our open-source project: **Blackjack and Teen Patti Game**. This project is a **C++ implementation** of two popular card games, showcasing the power of **object-oriented programming (OOP)** principles to create an engaging, interactive, and feature-rich gaming experience.
 
-Whether you’re here to learn about OOP concepts, explore game development, or contribute to an open-source project, this presentation will provide valuable insights into the project’s design, implementation, and potential for improvement.
+This presentation will walk you through the project’s design, implementation, and findings. By the end, you’ll have a clear understanding of how the project works, the approaches taken, and areas for improvement.
 
 ---
 
 ## **1. Project Overview**
 
-Let’s begin with an overview of the project.
-
-This project brings two classic card games—**Blackjack** and **Teen Patti**—to life using C++. It’s not just about playing games; it’s about learning and applying advanced programming concepts like **inheritance**, **encapsulation**, and **polymorphism**.
+### **What is the Project About?**
+This project implements two classic card games—**Blackjack** and **Teen Patti**—using C++. It demonstrates how advanced programming concepts like **inheritance**, **encapsulation**, and **polymorphism** can be applied to create real-world applications.
 
 ### **Why Did We Choose This Project?**
-- **Educational Value**: Demonstrates OOP concepts in action, making it ideal for students and developers looking to enhance their skills.
-- **Practical Application**: These games are relatable and fun, making the learning process enjoyable and engaging.
-- **Open Source Contribution**: Provides an opportunity for developers to collaborate, enhance, and optimize the codebase while learning from each other.
+- **Educational Value**: It’s a practical way to learn and demonstrate OOP concepts.
+- **Relatable and Fun**: Card games are universally understood, making the project engaging.
+- **Open Source Contribution**: It provides opportunities for collaboration and improvement.
 
 ### **Key Features**
 #### **Blackjack**:
-- **Player vs. Dealer Gameplay**: Simulates the classic casino game where players compete against the dealer.
-- **Betting System**: Includes cash management to make the game more realistic.
-- **Leaderboard**: Tracks high scores to encourage competition.
-- **Save and Load Functionality**: Allows players to save their progress and resume later.
+- **Player vs. Dealer Gameplay**: Simulates the classic casino game.
+- **Betting System**: Players manage cash and place bets.
+- **Leaderboard**: Tracks high scores for competitive play.
+- **Save and Load Functionality**: Players can save their progress and resume later.
 
 #### **Teen Patti**:
-- **Multiplayer Gameplay**: Supports multiple players for a more interactive experience.
-- **Card Shuffling and Dealing**: Ensures fairness and randomness in gameplay.
-- **Winner Determination**: Implements logic to decide the winner based on card values and combinations.
+- **Multiplayer Gameplay**: Supports multiple players for an interactive experience.
+- **Card Shuffling and Dealing**: Ensures fairness and randomness.
+- **Winner Determination**: Implements logic to decide the winner based on card values.
 
 ---
 
 ## **2. Objectives**
 
-Here’s what we aim to achieve with this project:
-
-- **Understand** how to implement card games using object-oriented programming.
-- **Analyze** the design choices, data structures, and algorithms used.
-- **Identify** areas for improvement or optimization in the codebase.
-- **Contribute** to the project by raising issues, suggesting enhancements, or submitting pull requests.
+### **What Do We Aim to Achieve?**
+1. **Understand** the implementation of card games using object-oriented programming.
+2. **Analyze** the design choices, data structures, and algorithms used.
+3. **Identify** areas for improvement or optimization in the codebase.
+4. **Contribute** to the project by raising issues, suggesting enhancements, or submitting pull requests.
 
 ---
 
 ## **3. Breadth-Wise Understanding of the Project**
-
-Let’s explore the structure of the project and its components.
 
 ### **Codebase Structure**
 The project is divided into two main modules:
@@ -72,8 +68,6 @@ The project is divided into two main modules:
 ---
 
 ## **4. Depth-Wise Analysis**
-
-Now, let’s take a closer look at the technical aspects of the project.
 
 ### **4.1 Approaches Taken**
 - **Object-Oriented Design**:
@@ -121,8 +115,7 @@ Now, let’s take a closer look at the technical aspects of the project.
 
 ## **6. Contribution**
 
-Here’s how you can contribute to this project:
-
+### **How Can You Contribute?**
 - **Raise an Issue**:
   - Highlight the use of deprecated `std::random_shuffle` and suggest replacing it with `std::shuffle`.
 - **Suggest Enhancements**:
@@ -139,8 +132,6 @@ This document serves as the markdown presentation for the project. It includes a
 ---
 
 ## **8. Q&A Preparation**
-
-Let’s prepare for some questions you might have:
 
 ### **Sample Questions**
 1. **Breadth-Wise**:
