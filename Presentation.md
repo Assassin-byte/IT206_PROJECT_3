@@ -133,14 +133,7 @@ This document serves as the markdown presentation for the project. It includes a
 
 ---
 
-## 9. Submission
-- **Finalization of Project**: Completed.
-- **Markdown Presentation**: Prepared.
-- **Potential Contributions**: Identified.
-
----
-
-## 10. Conclusion
+## 9. Conclusion
 This project is an excellent example of how object-oriented programming can be used to implement real-world applications. By analyzing and contributing to this project, we gain valuable insights into software design, problem-solving, and collaboration in open source development.
 
 ---

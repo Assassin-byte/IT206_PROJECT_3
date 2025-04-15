@@ -23,17 +23,19 @@ void Player::showHand() const {
     }
     std::cout << "\n";
 
+    char suits[] = {3, 4, 5, 6}; // ♥ = 3, ♦ = 4, ♣ = 5, ♠ = 6 (ASCII values for card suits)
+
     // Print the suit in the middle of the cards
     for (const Card& card : hand) {
         std::string suitSymbol;
         if (card.suit == "Hearts")
-        std::cout << "|  " << u8"♥" << "   | ";
+        std::cout << "|  " << suits[0] << "   | ";
         else if (card.suit == "Diamonds") 
-        std::cout << "|  " << u8"♦" << "   | ";
+        std::cout << "|  " << suits[1] << "   | ";
         else if (card.suit == "Clubs") 
-        std::cout << "|  " << u8"♣" << "   | ";        
+        std::cout << "|  " << suits[2] << "   | ";        
         else if (card.suit == "Spades") 
-        std::cout << "|  " << u8"♠" << "   | ";        
+        std::cout << "|  " << suits[3] << "   | ";        
         else suitSymbol = " ";
     }
     std::cout << "\n";
