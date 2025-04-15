@@ -138,4 +138,5 @@ This project is an excellent example of how object-oriented programming can be u
 
 ---
 
-Save this content as `Presentation.md` and submit it as required. Let me know if you need further refinements!
+### Thank You!
+This presentation is a testament to the power of collaboration and innovation in open source development. Let’s continue to build, learn, and grow together!
