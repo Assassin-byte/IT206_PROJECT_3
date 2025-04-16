@@ -4,18 +4,37 @@
 #include "Poker.h"
 #include <iostream>
 #include <string>
+#include <iomanip>
+
+// Function to center-align text
+void printCentered(const std::string& text, int width = 80) {
+    int padding = (width - text.length()) / 2;
+    if (padding > 0) {
+        std::cout << std::string(padding, ' '); // Add padding spaces
+    }
+    std::cout << text << std::endl;
+}
 
 void Home::showMenu() {
+    const std::string teal = "\033[36m"; // ANSI escape code for teal color
+    const std::string reset = "\033[0m"; // Reset color
+
     int choice;
 
     while (true) {
-        std::cout << "=============================" << std::endl;
-        std::cout << " Welcome to MultiCardGame! " << std::endl;
-        std::cout << "=============================" << std::endl;
-        std::cout << "1. Play Blackjack" << std::endl;
-        std::cout << "2. Play Teen Patti" << std::endl;
-        std::cout << "3. Play Poker (Texas Hold'em)" << std::endl;
-        std::cout << "4. Exit" << std::endl;
+        std::cout << teal;
+        printCentered("==========================================================");
+        printCentered("Welcome to MultiCardGame!");
+        printCentered("==========================================================");
+        printCentered("1. Play Blackjack");
+        printCentered("2. Play Teen Patti");
+        printCentered("3. Play Poker (Texas Hold'em)");
+        printCentered("4. Exit");
+        printf("\n");
+        printCentered("==========================================================");
+
+        std::cout << reset;
+
         std::cout << "Enter your choice: ";
         std::cin >> choice;
 
