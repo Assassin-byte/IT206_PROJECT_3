@@ -1,115 +1,81 @@
+# MultiCardGame
 
-
----
-
-## **3. Breadth-Wise Understanding of the Project**
-
-### **Codebase Structure**
-The project is divided into two main modules:
-
-1. **Blackjack**:
-   - Found in the `src` folder.
-   - Includes classes like `Game`, `Player`, `Dealer`, `Deck`, and `Card`.
-   - Implements game mechanics, player statistics, and file handling.
-
-2. **Teen Patti**:
-   - Found in the `TeenPatti` folder.
-   - Includes classes like `Game`, `Player`, and `Deck`.
-   - Focuses on multiplayer gameplay and winner determination.
-
-### **Key Components**
-- **Card Class**: Represents a playing card with attributes like rank, suit, and value.
-- **Deck Class**: Manages a collection of cards, including shuffling and dealing.
-- **Player Class**: Tracks player details such as name, hand, cash, and statistics.
-- **Game Class**: Implements the main game logic, including rounds, betting, and winner determination.
+The **MultiCardGame** is an engaging and modular card game project written entirely in C++. It supports multiple card games within a single framework, offering flexibility and scalability for players and developers alike.
 
 ---
 
-## **4. Depth-Wise Analysis**
-
-### **4.1 Approaches Taken**
-- **Object-Oriented Design**:
-  - Encapsulation of game logic and player data into modular classes.
-  - Inheritance for shared functionality (e.g., `Player` and `Dealer` inherit from `Human`).
-- **File Handling**:
-  - Binary files are used to save and load game states.
-  - High scores are stored in a separate file for leaderboard functionality.
-- **Randomization**:
-  - Card shuffling is implemented using `std::random_shuffle` to ensure fairness.
-
-### **4.2 Data Structures Used**
-- **Vectors**: Used to store cards in the deck and player hands.
-- **Strings**: Used for player names and card ranks.
-- **Custom Classes**: `Card`, `Deck`, `Player`, and `Game` encapsulate specific functionalities.
-
-### **4.3 Tradeoffs Made**
-- **Randomization**:
-  - `std::random_shuffle` is used, which is deprecated in modern C++ standards. A better alternative would be `std::shuffle` with a random number generator.
-- **File Handling**:
-  - Binary files are simple but lack portability compared to formats like JSON or XML.
-- **Game Logic**:
-  - The game logic is tightly coupled with the `Game` class, making it harder to extend or reuse components independently.
+## Table of Contents
+1. [Overview](#overview)
+2. [Features](#features)
+3. [How to Play](#how-to-play)
+4. [Code Structure](#code-structure)
+5. [Setup Instructions](#setup-instructions)
+6. [Contributing](#contributing)
+7. [License](#license)
 
 ---
 
-## **5. Findings and Suggestions**
+## Overview
 
-### **Strengths**
-- **Modular Design**: Clear separation of responsibilities across classes.
-- **Comprehensive Features**: Implements all essential game mechanics.
-- **Educational Value**: Demonstrates advanced programming concepts effectively.
+The **MultiCardGame** project is designed to provide a unified platform for playing various card games. Whether you're a fan of Poker, Solitaire, or Blackjack, this project aims to make it easy to play and even add new games to the framework.
 
-### **Areas for Improvement**
-1. **Modernization**:
-   - Replace `std::random_shuffle` with `std::shuffle` for better compatibility with modern C++ standards.
-2. **Error Handling**:
-   - Add robust error handling for file operations and invalid inputs.
-3. **Code Reusability**:
-   - Decouple game logic from the `Game` class to improve reusability and testability.
-4. **Documentation**:
-   - Add detailed comments and documentation for better code readability and maintainability.
+### Objectives
+- **Modularity**: Add or remove card games with minimal effort.
+- **Scalability**: Handle multiple card games and players seamlessly.
+- **User-Friendly**: Provide an intuitive interface for users and developers.
 
 ---
 
-## **6. Contribution**
+## Features
 
-### **How Can You Contribute?**
-- **Raise an Issue**:
-  - Highlight the use of deprecated `std::random_shuffle` and suggest replacing it with `std::shuffle`.
-- **Suggest Enhancements**:
-  - Propose improvements in file handling and error handling.
-- **Create a Pull Request**:
-  - Refactor the `Game` class for better modularity and reusability.
-
----
-
-## **7. Presentation**
-
-This document serves as the markdown presentation for the project. It includes an overview, objectives, analysis, and findings, making it a comprehensive resource for understanding and discussing the project.
+| Feature                | Description                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| **Multiple Games**     | Supports different card games within a single program.                     |
+| **Modular Design**     | Easily extendable to include new games.                                    |
+| **User Interaction**   | Interactive menus and prompts for a seamless user experience.              |
+| **Randomization**      | Implements shuffling and random card distribution using robust algorithms. |
+| **Error Handling**     | Includes mechanisms to handle invalid inputs and edge cases gracefully.    |
+| **Cross-Platform**     | Runs on multiple platforms with no additional configuration.               |
 
 ---
 
-## **8. Q&A Preparation**
+## How to Play
 
-### **Sample Questions**
-1. **Breadth-Wise**:
-   - What are the main components of the project, and how do they interact?
-   - How is the deck of cards managed in the game?
-2. **Depth-Wise**:
-   - What data structures are used to store player hands and the deck?
-   - How does the project handle randomization for card shuffling?
-3. **Tradeoffs**:
-   - Why was binary file handling chosen over text-based formats?
-   - What are the limitations of the current implementation?
+### Step 1: Choose a Game
+When you run the program, you will be prompted to select a card game from the available options (e.g., Poker, Blackjack).
+
+### Step 2: Follow the Instructions
+Each game has its own set of rules and instructions, which are displayed when you select the game.
+
+### Step 3: Enjoy!
+Play the game, interact with the menus, and have fun!
 
 ---
 
-## **9. Conclusion**
+## Code Structure
 
-To wrap up, this project is an excellent example of how object-oriented programming can be used to implement real-world applications. By analyzing and contributing to this project, we gain valuable insights into software design, problem-solving, and collaboration in open source development.
+The codebase of **MultiCardGame** is organized as follows:
+
+| File/Directory         | Description                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| `main.cpp`             | Entry point of the program. Handles game selection and overall flow.       |
+| `Card.h` / `Card.cpp`  | Represents individual cards and their properties (e.g., rank, suit).       |
+| `Deck.h` / `Deck.cpp`  | Implements the deck of cards, including shuffling and dealing functionality.|
+| `GameBase.h`           | Base class for all card games to ensure modularity and consistency.        |
+| `Poker.h` / `Poker.cpp`| Implements the logic for Poker.                                            |
+| `Blackjack.h`          | Implements the logic for Blackjack (in progress or completed).             |
+| `utils/`               | Contains helper functions for input validation, randomization, etc.        |
 
 ---
 
-### **Thank You!**
+## Setup Instructions
 
-Thank you for your time and attention! This project is a testament to the power of collaboration and innovation in open source development. Let’s continue to build, learn, and grow together!
+### Prerequisites
+- A C++ compiler (e.g., GCC, Clang, or MSVC)
+- CMake (optional, for build configuration)
+
+### Steps to Run
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Assassin-byte/IT206_PROJECT_3.git
+   cd IT206_PROJECT_3
