@@ -1,5 +1,6 @@
 # **BlackJack & TeenPatti**
 
+
 ---
 
 ## **Introduction**
@@ -260,23 +261,23 @@ The `Game` class implements the main game logic.
 
 2. **Compile & Run the Code For Blacjack**:
 
-- For BlackJack:
+- Compile the BlackJack:
    ```bash
    g++ BlackJack/*.cpp -o BlackJackGame
 
-- For BlackJack : 
+- Run the BlackJack : 
     ```bash
     ./BlackJackGame
     ```
 
 3. **Compile & Run the Code For TeenPatti**:
 
-- For TeenPatti:
+- Compile the TeenPatti:
    ```bash
    g++ TeenPatti/*.cpp -o TeenPattiGame
    ```
-   
-- For TeenPatti :
+
+- Run the TeenPatti :
     ```bash
     ./TeenPattiGame
     ```
@@ -285,5 +286,6 @@ The `Game` class implements the main game logic.
    
 ## **6. Conclusion**
 The BlackJack and TeenPatti implementations in this project demonstrate the power of object-oriented programming to create modular and reusable code. By understanding the structure and functionality of these games, you can extend or modify the project to include additional features or games.
+
 
 ---
