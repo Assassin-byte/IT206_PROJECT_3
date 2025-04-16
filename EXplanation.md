@@ -259,9 +259,17 @@ The `Game` class implements the main game logic.
    cd IT206_PROJECT_3
 
 2. **Compile the Code**:
+---
+- For BlackJack:
    ```bash
    g++ BlackJack/*.cpp -o BlackJackGame
+
+   ```
++---
++ For TeenPatti:
+   ```bash
    g++ TeenPatti/*.cpp -o TeenPattiGame
+
 
 3. **Run the Game**:
    ```bash
