@@ -284,7 +284,7 @@ The `Game` class implements the main game logic.
 
 ---
 
-## **6. Sources ** 
+## **6. Sources** 
 
 - BlackJack : https://github.com/ineshbose/Blackjack_CPP 
 
