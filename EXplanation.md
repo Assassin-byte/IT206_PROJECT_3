@@ -246,8 +246,14 @@ The `Game` class implements the main game logic.
 
 ---
 
-## **5. Conclusion**
+## **5. How to Run**
 
-The **BlackJack** and **TeenPatti** implementations in this project demonstrate the power of **object-oriented programming** to create modular and reusable code. By understanding the structure and functionality of these games, you can extend or modify the project to include additional features or games.
+### **Prerequisites**
+- A C++ compiler (e.g., GCC, Clang, or MSVC).
+- A terminal or command prompt to execute commands.
 
----
+### **Steps to Compile and Run**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Assassin-byte/IT206_PROJECT_3.git
+   cd IT206_PROJECT_3
