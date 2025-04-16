@@ -1,143 +1,253 @@
-# **Open Source Project Presentation: Blackjack and Teen Patti Game**
+# **BlackJack & TeenPatti**
 
 ---
 
-## **Welcome!**
+## **Introduction**
 
-Hello everyone, and thank you for joining me today! I’m excited to present our open-source project: **Blackjack and Teen Patti Game**. This project is a **C++ implementation** of two popular card games, showcasing the power of **object-oriented programming (OOP)** principles to create an engaging, interactive, and feature-rich gaming experience.
+The **BlackJack** and **TeenPatti** projects are C++ implementations of two popular card games. These projects demonstrate the application of **object-oriented programming (OOP)** principles, such as **inheritance**, **encapsulation**, and **polymorphism**, to create modular, reusable, and interactive games.
 
-This presentation will walk you through the project’s design, implementation, and findings. By the end, you’ll have a clear understanding of how the project works, the approaches taken, and areas for improvement.
-
----
-
-## **1. Project Overview**
-
-### **What is the Project About?**
-This project implements two classic card games—**Blackjack** and **Teen Patti**—using C++. It demonstrates how advanced programming concepts like **inheritance**, **encapsulation**, and **polymorphism** can be applied to create real-world applications.
-
-### **Why Did We Choose This Project?**
-| Reason                  | Description                                                                 |
-|-------------------------|-----------------------------------------------------------------------------|
-| **Educational Value**   | It’s a practical way to learn and demonstrate OOP concepts.                |
-| **Relatable and Fun**   | Card games are universally understood, making the project engaging.        |
-| **Open Source Contribution** | It provides opportunities for collaboration and improvement.           |
-
-### **Key Features**
-| Game       | Features                                                                                 |
-|------------|------------------------------------------------------------------------------------------|
-| **Blackjack** | - Player vs. Dealer Gameplay<br>- Betting System<br>- Leaderboard<br>- Save and Load Functionality |
-| **Teen Patti** | - Multiplayer Gameplay<br>- Card Shuffling and Dealing<br>- Winner Determination |
+This document provides a detailed explanation of the **BlackJack** and **TeenPatti** directories, covering their structure, functionality, and logic. By the end of this document, you will have a complete understanding of how these games are implemented and how they work.
 
 ---
 
-## **2. Objectives**
+## **1. Codebase Overview**
 
-### **What Do We Aim to Achieve?**
-| Objective | Description                                                                 |
-|-----------|-----------------------------------------------------------------------------|
-| **Understand** | The implementation of card games using object-oriented programming.   |
-| **Analyze**    | The design choices, data structures, and algorithms used.             |
-| **Identify**   | Areas for improvement or optimization in the codebase.                |
-| **Contribute** | Raise issues, suggest enhancements, or submit pull requests.          |
+The project is organized into two main directories:
 
----
+### **1.1 BlackJack Directory**
+The **BlackJack** directory contains the implementation of the classic casino game where the player competes against the dealer to achieve a hand value as close to 21 as possible without exceeding it.
 
-## **3. Breadth-Wise Understanding of the Project**
+**Key Features:**
+- Player vs. Dealer gameplay.
+- Betting system with cash management.
+- Save and load functionality for game progress.
+- Leaderboard to track high scores.
 
-### **Codebase Structure**
-| Module       | Description                                                                 |
+**Key Classes:**
+| Class        | Description                                                                 |
 |--------------|-----------------------------------------------------------------------------|
-| **Blackjack** | Found in the `src` folder. Includes classes like `Game`, `Player`, `Dealer`, `Deck`, and `Card`. Implements game mechanics, player statistics, and file handling. |
-| **Teen Patti** | Found in the `TeenPatti` folder. Includes classes like `Game`, `Player`, and `Deck`. Focuses on multiplayer gameplay and winner determination. |
+| `Card`       | Represents a playing card with attributes like rank, suit, and value.      |
+| `Deck`       | Manages a collection of cards, including shuffling and dealing.            |
+| `Human`      | Base class for `Player` and `Dealer`, managing the hand and card operations.|
+| `Player`     | Extends `Human` to include player-specific attributes like cash and stats. |
+| `Dealer`     | Extends `Human` to include dealer-specific behavior, such as hiding cards. |
+| `Game`       | Implements the main game logic, including betting, card dealing, and winner determination. |
 
-### **Key Components**
-| Component    | Description                                                                 |
+---
+
+### **1.2 TeenPatti Directory**
+The **TeenPatti** directory contains the implementation of the popular Indian card game where players compete to have the best three-card hand.
+
+**Key Features:**
+- Multiplayer gameplay with two players.
+- Card shuffling and dealing.
+- Winner determination based on hand rankings.
+
+**Key Classes:**
+| Class        | Description                                                                 |
 |--------------|-----------------------------------------------------------------------------|
-| **Card Class** | Represents a playing card with attributes like rank, suit, and value.    |
-| **Deck Class** | Manages a collection of cards, including shuffling and dealing.          |
-| **Player Class** | Tracks player details such as name, hand, cash, and statistics.        |
-| **Game Class** | Implements the main game logic, including rounds, betting, and winner determination. |
+| `Card`       | Represents a playing card with attributes like rank, suit, and value.      |
+| `Deck`       | Manages a collection of cards, including shuffling and dealing.            |
+| `Player`     | Tracks player details such as name and hand.                               |
+| `Game`       | Implements the main game logic, including rounds and winner determination. |
 
 ---
 
-## **4. Depth-Wise Analysis**
+## **2. BlackJack Code Structure**
 
-### **4.1 Approaches Taken**
-| Approach               | Description                                                                 |
-|------------------------|-----------------------------------------------------------------------------|
-| **Object-Oriented Design** | Encapsulation of game logic and player data into modular classes. Inheritance for shared functionality (e.g., `Player` and `Dealer` inherit from `Human`). |
-| **File Handling**      | Binary files are used to save and load game states. High scores are stored in a separate file for leaderboard functionality. |
-| **Randomization**      | Card shuffling is implemented using `std::random_shuffle` to ensure fairness. |
+### **2.1 Class Breakdown**
 
-### **4.2 Data Structures Used**
-| Data Structure | Usage                                                                 |
-|----------------|----------------------------------------------------------------------|
-| **Vectors**    | Used to store cards in the deck and player hands.                   |
-| **Strings**    | Used for player names and card ranks.                               |
-| **Custom Classes** | `Card`, `Deck`, `Player`, and `Game` encapsulate specific functionalities. |
+#### **Card Class**
+The `Card` class represents a single playing card.
 
-### **4.3 Tradeoffs Made**
-| Tradeoff       | Description                                                                 |
-|----------------|-----------------------------------------------------------------------------|
-| **Randomization** | `std::random_shuffle` is used, which is deprecated in modern C++ standards. A better alternative would be `std::shuffle` with a random number generator. |
-| **File Handling** | Binary files are simple but lack portability compared to formats like JSON or XML. |
-| **Game Logic**    | The game logic is tightly coupled with the `Game` class, making it harder to extend or reuse components independently. |
+| **Attributes** | **Type**   | **Description**                                      |
+|----------------|------------|------------------------------------------------------|
+| `number`       | `int`      | Numeric value of the card (e.g., 1 for Ace).         |
+| `suit`         | `char`     | Suit of the card (e.g., 'H' for Hearts).             |
+| `block`        | `bool`     | Used for Ace switching between 1 and 11.             |
 
----
-
-## **5. Findings and Suggestions**
-
-### **Strengths**
-| Strength           | Description                                                                 |
-|--------------------|-----------------------------------------------------------------------------|
-| **Modular Design** | Clear separation of responsibilities across classes.                       |
-| **Comprehensive Features** | Implements all essential game mechanics.                          |
-| **Educational Value** | Demonstrates advanced programming concepts effectively.                |
-
-### **Areas for Improvement**
-| Improvement        | Description                                                                 |
-|--------------------|-----------------------------------------------------------------------------|
-| **Modernization**  | Replace `std::random_shuffle` with `std::shuffle` for better compatibility with modern C++ standards. |
-| **Error Handling** | Add robust error handling for file operations and invalid inputs.           |
-| **Code Reusability** | Decouple game logic from the `Game` class to improve reusability and testability. |
-| **Documentation**  | Add detailed comments and documentation for better code readability and maintainability. |
+| **Methods**         | **Description**                                              |
+|---------------------|--------------------------------------------------------------|
+| `Card()`            | Default constructor.                                         |
+| `Card(int no, char s)` | Parameterized constructor.                                |
+| `getNumber()`       | Returns the card's number.                                   |
+| `getSuit()`         | Returns the card's suit.                                     |
+| `setNumber(int)`    | Sets the card's number.                                      |
+| `setSuit(char)`     | Sets the card's suit.                                        |
+| `getPrintNumber()`  | Returns the printable character for the card's number.       |
 
 ---
 
-## **6. Contribution**
+#### **Deck Class**
+The `Deck` class manages a collection of cards.
 
-### **How Can You Contribute?**
-| Contribution Type  | Description                                                                 |
-|--------------------|-----------------------------------------------------------------------------|
-| **Raise an Issue** | Highlight the use of deprecated `std::random_shuffle` and suggest replacing it with `std::shuffle`. |
-| **Suggest Enhancements** | Propose improvements in file handling and error handling.            |
-| **Create a Pull Request** | Refactor the `Game` class for better modularity and reusability.     |
+| **Attributes** | **Type**               | **Description**                          |
+|----------------|------------------------|------------------------------------------|
+| `deck`         | `std::vector<Card>`    | A vector containing all the cards.       |
 
----
-
-## **7. Presentation**
-
-This document serves as the markdown presentation for the project. It includes an overview, objectives, analysis, and findings, making it a comprehensive resource for understanding and discussing the project.
+| **Methods**         | **Description**                                              |
+|---------------------|--------------------------------------------------------------|
+| `initializeDeck()`  | Initializes the deck with 52 cards.                          |
+| `getSize()`         | Returns the number of cards in the deck.                     |
+| `deal()`            | Deals a card from the deck.                                  |
 
 ---
 
-## **8. Q&A Preparation**
+#### **Human Class**
+The `Human` class is a base class for `Player` and `Dealer`.
 
-### **Sample Questions**
-| Category       | Questions                                                                 |
-|----------------|---------------------------------------------------------------------------|
-| **Breadth-Wise** | - What are the main components of the project, and how do they interact?<br>- How is the deck of cards managed in the game? |
-| **Depth-Wise**   | - What data structures are used to store player hands and the deck?<br>- How does the project handle randomization for card shuffling? |
-| **Tradeoffs**    | - Why was binary file handling chosen over text-based formats?<br>- What are the limitations of the current implementation? |
+| **Attributes** | **Type**               | **Description**                          |
+|----------------|------------------------|------------------------------------------|
+| `hand`         | `std::vector<Card>`    | The cards in the player's or dealer's hand. |
+| `sum`          | `int`                 | The total value of the hand.             |
+
+| **Methods**         | **Description**                                              |
+|---------------------|--------------------------------------------------------------|
+| `getSum()`          | Returns the total value of the hand.                         |
+| `switchAce()`       | Adjusts the value of an Ace if the total exceeds 21.         |
+| `addCard(Card)`     | Adds a card to the hand.                                     |
+| `clearCards()`      | Clears the hand.                                             |
+| `printCards()`      | Prints the cards in the hand.                                |
 
 ---
 
-## **9. Conclusion**
+#### **Player Class**
+The `Player` class extends `Human` and adds player-specific attributes.
 
-To wrap up, this project is an excellent example of how object-oriented programming can be used to implement real-world applications. By analyzing and contributing to this project, we gain valuable insights into software design, problem-solving, and collaboration in open source development.
+| **Attributes** | **Type**               | **Description**                          |
+|----------------|------------------------|------------------------------------------|
+| `name`         | `std::string`          | The player's name.                       |
+| `cash`         | `int`                 | The player's current cash.               |
+| `bet`          | `int`                 | The player's current bet.                |
+| `wins`         | `int`                 | The number of games the player has won.  |
+| `loses`        | `int`                 | The number of games the player has lost. |
+
+| **Methods**         | **Description**                                              |
+|---------------------|--------------------------------------------------------------|
+| `getName()`         | Returns the player's name.                                   |
+| `getCash()`         | Returns the player's cash.                                   |
+| `setBet(int)`       | Sets the player's bet.                                       |
+| `addCash(int)`      | Adds cash to the player's total.                             |
+| `incrementWins()`   | Increments the player's win count.                           |
+| `incrementLoses()`  | Increments the player's lose count.                          |
 
 ---
 
-### **Thank You!**
+#### **Dealer Class**
+The `Dealer` class extends `Human` and adds dealer-specific behavior.
 
-Thank you for your time and attention! This project is a testament to the power of collaboration and innovation in open source development. Let’s continue to build, learn, and grow together!
+| **Methods**         | **Description**                                              |
+|---------------------|--------------------------------------------------------------|
+| `printFirstCard()`  | Prints the dealer's first card while hiding the second.       |
+
+---
+
+#### **Game Class**
+The `Game` class implements the main game logic.
+
+| **Attributes** | **Type**               | **Description**                          |
+|----------------|------------------------|------------------------------------------|
+| `player`       | `Player`               | The user playing the game.               |
+| `dealer`       | `Dealer`               | The dealer in the game.                  |
+| `deck`         | `Deck`                 | The deck of cards.                       |
+
+| **Methods**         | **Description**                                              |
+|---------------------|--------------------------------------------------------------|
+| `beginGame()`       | Starts the game.                                             |
+| `startBet()`        | Handles the betting process.                                 |
+| `startGame()`       | Handles the main game loop.                                  |
+| `saveGame()`        | Saves the game state to a file.                              |
+| `loadGame()`        | Loads the game state from a file.                            |
+
+---
+
+## **3. TeenPatti Code Structure**
+
+### **3.1 Class Breakdown**
+
+#### **Card Class**
+The `Card` class represents a single playing card.
+
+| **Attributes** | **Type**               | **Description**                          |
+|----------------|------------------------|------------------------------------------|
+| `rank`         | `std::string`          | The rank of the card (e.g., "A", "K").   |
+| `suit`         | `std::string`          | The suit of the card (e.g., "Hearts").   |
+| `value`        | `int`                 | The numeric value of the card.           |
+
+---
+
+#### **Deck Class**
+The `Deck` class manages a collection of cards.
+
+| **Attributes** | **Type**               | **Description**                          |
+|----------------|------------------------|------------------------------------------|
+| `cards`        | `std::vector<Card>`    | A vector containing all the cards.       |
+
+| **Methods**         | **Description**                                              |
+|---------------------|--------------------------------------------------------------|
+| `shuffle()`         | Shuffles the deck.                                           |
+| `dealCard()`        | Deals a card from the deck.                                  |
+
+---
+
+#### **Player Class**
+The `Player` class tracks player details.
+
+| **Attributes** | **Type**               | **Description**                          |
+|----------------|------------------------|------------------------------------------|
+| `name`         | `std::string`          | The player's name.                       |
+| `hand`         | `std::vector<Card>`    | The player's hand.                       |
+
+| **Methods**         | **Description**                                              |
+|---------------------|--------------------------------------------------------------|
+| `addCard(const Card&)` | Adds a card to the player's hand.                         |
+| `showHand() const`  | Displays the player's hand.                                  |
+
+---
+
+#### **Game Class**
+The `Game` class implements the main game logic.
+
+| **Attributes** | **Type**               | **Description**                          |
+|----------------|------------------------|------------------------------------------|
+| `deck`         | `Deck`                 | The deck of cards.                       |
+| `player1`      | `Player`               | The first player.                        |
+| `player2`      | `Player`               | The second player.                       |
+
+| **Methods**         | **Description**                                              |
+|---------------------|--------------------------------------------------------------|
+| `playRound()`       | Plays a single round of the game.                            |
+| `startGame(int)`    | Starts the game for a specified number of rounds.            |
+
+---
+
+## **4. Call Flow**
+
+### **BlackJack**
+1. **`main()`**:
+   - Initializes the `Game` object.
+   - Calls `Game::beginMenu()` to display the main menu.
+2. **`Game::beginMenu()`**:
+   - Displays the menu options and calls the appropriate methods based on user input.
+3. **`Game::beginGame()`**:
+   - Handles the main game loop, including betting, dealing cards, and determining the winner.
+
+---
+
+### **TeenPatti**
+1. **`main()`**:
+   - Initializes the `Game` object.
+   - Calls `Game::startGame()` to begin the game.
+2. **`Game::startGame()`**:
+   - Handles multiple rounds of gameplay.
+   - Calls `Game::playRound()` for each round.
+3. **`Game::playRound()`**:
+   - Deals cards to players and determines the winner of the round.
+
+---
+
+## **5. Conclusion**
+
+The **BlackJack** and **TeenPatti** implementations in this project demonstrate the power of **object-oriented programming** to create modular and reusable code. By understanding the structure and functionality of these games, you can extend or modify the project to include additional features or games.
+
+---
