@@ -258,23 +258,24 @@ The `Game` class implements the main game logic.
    git clone https://github.com/Assassin-byte/IT206_PROJECT_3.git
    cd IT206_PROJECT_3
 
-2. **Compile the Code**:
+2. **Compile & Run the Code For Blacjack**:
 
 - For BlackJack:
    ```bash
    g++ BlackJack/*.cpp -o BlackJackGame
-   ```
 
-+ For TeenPatti:
-   ```bash
-   g++ TeenPatti/*.cpp -o TeenPattiGame
-   ```
-
-3. **Run the Game**:
 - For BlackJack : 
     ```bash
     ./BlackJackGame
     ```
+
+3. **Compile & Run the Code For TeenPatti**:
+
+- For TeenPatti:
+   ```bash
+   g++ TeenPatti/*.cpp -o TeenPattiGame
+   ```
+   
 - For TeenPatti :
     ```bash
     ./TeenPattiGame
