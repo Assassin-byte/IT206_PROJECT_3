@@ -269,6 +269,8 @@ The `Game` class implements the main game logic.
    ./TeenPattiGame
 
    ```
+
+---
    
 ## **6. Conclusion**
 The BlackJack and TeenPatti implementations in this project demonstrate the power of object-oriented programming to create modular and reusable code. By understanding the structure and functionality of these games, you can extend or modify the project to include additional features or games.
