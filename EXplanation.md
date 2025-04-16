@@ -5,9 +5,9 @@
 
 ## **Introduction**
 
-The **BlackJack** and **TeenPatti** projects are C++ implementations of two popular card games. These projects demonstrate the application of **object-oriented programming (OOP)** principles, such as **inheritance**, **encapsulation**, and **polymorphism**, to create modular, reusable, and interactive games.
+The **BlackJack** project is C++ implementations of popular card game. This project demonstrates the application of **object-oriented programming (OOP)** principles, such as **inheritance**, **encapsulation**, and **polymorphism**, to create modular, reusable, and interactive game.
 
-This document provides a detailed explanation of the **BlackJack** and **TeenPatti** directories, covering their structure, functionality, and logic. By the end of this document, you will have a complete understanding of how these games are implemented and how they work.
+This document provides a detailed explanation of the **BlackJack** directories, covering its structure, functionality, and logic. By the end of this document, you will have a complete understanding of how this games is implemented and how it works.
 
 ---
 
@@ -36,7 +36,7 @@ The **BlackJack** directory contains the implementation of the classic casino ga
 
 ---
 
-### **1.2 TeenPatti Directory**
+<!-- ### **1.2 TeenPatti Directory**
 The **TeenPatti** directory contains the implementation of the popular Indian card game where players compete to have the best three-card hand.
 
 **Key Features:**
@@ -52,7 +52,7 @@ The **TeenPatti** directory contains the implementation of the popular Indian ca
 | `Player`     | Tracks player details such as name and hand.                               |
 | `Game`       | Implements the main game logic, including rounds and winner determination. |
 
----
+--- -->
 
 ## **2. BlackJack Code Structure**
 
@@ -162,7 +162,7 @@ The `Game` class implements the main game logic.
 
 ---
 
-## **3. TeenPatti Code Structure**
+<!-- ## **3. TeenPatti Code Structure**
 
 ### **3.1 Class Breakdown**
 
@@ -220,7 +220,7 @@ The `Game` class implements the main game logic.
 | `playRound()`       | Plays a single round of the game.                            |
 | `startGame(int)`    | Starts the game for a specified number of rounds.            |
 
----
+--- -->
 
 ## **4. Call Flow**
 
@@ -235,7 +235,7 @@ The `Game` class implements the main game logic.
 
 ---
 
-### **TeenPatti**
+<!-- ### **TeenPatti**
 1. **`main()`**:
    - Initializes the `Game` object.
    - Calls `Game::startGame()` to begin the game.
@@ -245,7 +245,7 @@ The `Game` class implements the main game logic.
 3. **`Game::playRound()`**:
    - Deals cards to players and determines the winner of the round.
 
----
+--- -->
 
 ## **5. How to Run**
 
@@ -259,7 +259,7 @@ The `Game` class implements the main game logic.
    git clone https://github.com/Assassin-byte/IT206_PROJECT_3.git
    cd IT206_PROJECT_3
 
-2. **Compile & Run the Code For Blacjack**:
+2. **Compile the Code**:
 
 - Compile the BlackJack:
    ```bash
@@ -269,8 +269,10 @@ The `Game` class implements the main game logic.
     ```bash
     ./BlackJackGame
     ```
+3. **Run the Game** 
 
-3. **Compile & Run the Code For TeenPatti**:
+
+<!-- 3. **Compile & Run the Code For TeenPatti**:
 
 - Compile the TeenPatti:
    ```bash
@@ -282,13 +284,13 @@ The `Game` class implements the main game logic.
     ./TeenPattiGame
     ```
 
----
+--- -->
 
 ## **6. Sources** 
 
 - BlackJack : https://github.com/ineshbose/Blackjack_CPP 
 
-- TeenPatti : https://github.com/ahtisham225/Teen-Patti-Game
+<!-- - TeenPatti : https://github.com/ahtisham225/Teen-Patti-Game -->
 
 ---
    
