@@ -1,81 +1,124 @@
-# MultiCardGame
+# Explanation of MultiCardGame Project
 
-The **MultiCardGame** is an engaging and modular card game project written entirely in C++. It supports multiple card games within a single framework, offering flexibility and scalability for players and developers alike.
-
----
-
-## Table of Contents
-1. [Overview](#overview)
-2. [Features](#features)
-3. [How to Play](#how-to-play)
-4. [Code Structure](#code-structure)
-5. [Setup Instructions](#setup-instructions)
-6. [Contributing](#contributing)
-7. [License](#license)
+The **MultiCardGame** project is a modular and versatile card game platform developed in C++. It provides a unified framework for playing multiple card games, such as Poker and Blackjack, with the potential to add more games seamlessly. Below is a detailed explanation of the project, its components, and its functionality.
 
 ---
 
-## Overview
+## Objectives
 
-The **MultiCardGame** project is designed to provide a unified platform for playing various card games. Whether you're a fan of Poker, Solitaire, or Blackjack, this project aims to make it easy to play and even add new games to the framework.
-
-### Objectives
-- **Modularity**: Add or remove card games with minimal effort.
-- **Scalability**: Handle multiple card games and players seamlessly.
-- **User-Friendly**: Provide an intuitive interface for users and developers.
+The primary goals of the project include:
+- **Modularity**: Simplify the process of adding or removing card games with minimal changes to the code.
+- **Scalability**: Support multiple games and players efficiently.
+- **User-Friendliness**: Deliver an intuitive user experience for both players and developers.
 
 ---
 
-## Features
+## Supported Games
 
-| Feature                | Description                                                                 |
-|------------------------|-----------------------------------------------------------------------------|
-| **Multiple Games**     | Supports different card games within a single program.                     |
-| **Modular Design**     | Easily extendable to include new games.                                    |
-| **User Interaction**   | Interactive menus and prompts for a seamless user experience.              |
-| **Randomization**      | Implements shuffling and random card distribution using robust algorithms. |
-| **Error Handling**     | Includes mechanisms to handle invalid inputs and edge cases gracefully.    |
-| **Cross-Platform**     | Runs on multiple platforms with no additional configuration.               |
+### 1. **Poker**
+- **Gameplay**: Poker is a strategy-based card game in which players aim to form the best hand or bluff their opponents into folding.
+- **Implementation Details**:
+  - Managed by `Poker.h` and `Poker.cpp`.
+  - Includes hand ranking logic and a betting system.
+  - Handles multiplayer scenarios (if applicable).
+- **Key Features**:
+  - Card dealing and hand evaluation.
+  - Betting rounds and showdown.
+  - Winning hand determination.
 
----
-
-## How to Play
-
-### Step 1: Choose a Game
-When you run the program, you will be prompted to select a card game from the available options (e.g., Poker, Blackjack).
-
-### Step 2: Follow the Instructions
-Each game has its own set of rules and instructions, which are displayed when you select the game.
-
-### Step 3: Enjoy!
-Play the game, interact with the menus, and have fun!
+### 2. **Blackjack**
+- **Gameplay**: Players try to achieve a hand value of 21 or as close as possible without exceeding it, while also beating the dealer's hand.
+- **Implementation Details**:
+  - Managed by `Blackjack.h` (status unclear as in-progress or completed).
+  - Dealer AI handles its own cards based on predefined strategies.
+- **Key Features**:
+  - Player options: hit, stand, double down.
+  - Automatic scoring and result evaluation.
+  - Real-time feedback to players.
 
 ---
 
 ## Code Structure
 
-The codebase of **MultiCardGame** is organized as follows:
+The project is organized into modular components to ensure reusability and ease of maintenance. Below is a breakdown of the key files and their roles:
 
-| File/Directory         | Description                                                                 |
-|------------------------|-----------------------------------------------------------------------------|
-| `main.cpp`             | Entry point of the program. Handles game selection and overall flow.       |
-| `Card.h` / `Card.cpp`  | Represents individual cards and their properties (e.g., rank, suit).       |
-| `Deck.h` / `Deck.cpp`  | Implements the deck of cards, including shuffling and dealing functionality.|
-| `GameBase.h`           | Base class for all card games to ensure modularity and consistency.        |
-| `Poker.h` / `Poker.cpp`| Implements the logic for Poker.                                            |
-| `Blackjack.h`          | Implements the logic for Blackjack (in progress or completed).             |
-| `utils/`               | Contains helper functions for input validation, randomization, etc.        |
+| File/Directory         | Purpose                                                                   |
+|------------------------|---------------------------------------------------------------------------|
+| `main.cpp`             | Entry point that manages game selection and the overall program flow.    |
+| `Card.h` / `Card.cpp`  | Defines individual cards and their attributes, such as rank and suit.    |
+| `Deck.h` / `Deck.cpp`  | Implements deck functionalities like shuffling and dealing cards.        |
+| `GameBase.h`           | Serves as a base class for all card games to maintain consistency.       |
+| `Poker.h` / `Poker.cpp`| Contains gameplay logic specific to Poker.                              |
+| `Blackjack.h`          | Contains gameplay logic specific to Blackjack.                          |
+| `utils/`               | A directory for helper functions (e.g., randomization, input validation).|
+
+---
+
+## Features
+
+The MultiCardGame project is packed with features to enhance gameplay and simplify development:
+- **Multiple Games**: Supports various card games in one program.
+- **Modular Design**: Allows easy addition or removal of games.
+- **Interactive Menus**: Provides user-friendly prompts for seamless interaction.
+- **Randomization**: Implements shuffling and card distribution using robust algorithms.
+- **Error Handling**: Manages invalid inputs and edge cases gracefully.
+- **Cross-Platform Compatibility**: Runs on multiple platforms without additional setup.
+
+---
+
+## How It Works
+
+### Step 1: Game Selection
+When the program starts, users are presented with a menu to choose a game (e.g., Poker or Blackjack).
+
+### Step 2: Gameplay
+- For Poker: Players take turns betting and forming hands based on the game rules.
+- For Blackjack: Players make decisions (hit, stand) to compete against the dealer.
+
+### Step 3: Results
+The program evaluates the outcome and displays the results, such as the winning hand in Poker or scores in Blackjack.
+
+---
+
+## Adding a New Game
+
+The modular design of the project makes it easy to integrate additional games. Here’s a step-by-step guide:
+1. **Create a New Game Class**:
+   - Derive the new class from `GameBase.h`.
+   - Implement the unique rules and mechanics of the game.
+2. **Update `main.cpp`**:
+   - Add the new game to the game selection menu.
+   - Ensure the new class is correctly instantiated and managed.
+3. **Test Thoroughly**:
+   - Validate the new game’s functionality and ensure it integrates seamlessly with the existing framework.
 
 ---
 
 ## Setup Instructions
 
 ### Prerequisites
-- A C++ compiler (e.g., GCC, Clang, or MSVC)
-- CMake (optional, for build configuration)
+- A C++ compiler (e.g., GCC, Clang, or MSVC).
+- CMake (optional, for build configuration).
 
 ### Steps to Run
 1. Clone the repository:
    ```bash
    git clone https://github.com/Assassin-byte/IT206_PROJECT_3.git
    cd IT206_PROJECT_3
+   ```
+2. Compile the program:
+   ```bash
+   g++ main.cpp -o MultiCardGame
+   ```
+3. Run the program:
+   ```bash
+   ./MultiCardGame
+   ```
+
+---
+
+## Conclusion
+
+The **MultiCardGame** project stands out for its flexibility, scalability, and user-centric design. It serves as an excellent platform for developers to explore game development in C++ and for players to enjoy a variety of card games in one place.
+
+For any questions or contributions, please refer to the [repository](https://github.com/Assassin-byte/IT206_PROJECT_3) or the [Contributing Guidelines](#contributing).
