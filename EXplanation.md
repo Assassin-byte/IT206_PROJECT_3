@@ -272,13 +272,14 @@ The `Game` class implements the main game logic.
 
 3. **Run the Game**:
 - For BlackJack : 
-   ```bash
-   ./BlackJackGame
-   ```
+    ```bash
+    ./BlackJackGame
+    ```
 - For TeenPatti :
-   ./TeenPattiGame
-   ```
-   
+    ```bash
+    ./TeenPattiGame
+    ```
+
 ---
    
 ## **6. Conclusion**
